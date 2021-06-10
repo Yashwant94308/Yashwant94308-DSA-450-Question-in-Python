@@ -11,7 +11,7 @@ for word in words:
     for i, c in enumerate(word):
         sets[i, c].add(word)
 
-
+print(sets)
 all_words = set(words)
 
 for q in queries:
