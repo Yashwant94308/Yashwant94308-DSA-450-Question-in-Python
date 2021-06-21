@@ -1,8 +1,8 @@
-def findIntersection(head1,head2):
-    #return head
+def findIntersection(head1, head2):
+    # return head
     cur = None
     res = None
-    while head1 != None and head2 != None:
+    while head1 is not None and head2 is not None:
         if head1.data < head2.data:
             head1 = head1.next
         elif head1.data > head2.data:
