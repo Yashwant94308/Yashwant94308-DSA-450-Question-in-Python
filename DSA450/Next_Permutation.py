@@ -1,49 +1,39 @@
-# User function Template for python3
-class Solution:
-    def nextPermutation(self, N, nums):
-        # code here
-        def swap(i, j):
-            tmp = nums[i]
-            nums[i] = nums[j]
-            nums[j] = tmp
-
-        def reverse(i):
-            j = len(nums) - 1
-            while i < j:
-                swap(i, j)
-                i += 1
-                j -= 1
-
-        for i in range(N):
-            nums[i] = str(nums[i])
-
-        i, j = len(nums) - 1, len(nums) - 1
-        while i > 0 and int(nums[i - 1]) >= int(nums[i]):     i -= 1
-
-        if i > 0:
-            while j >= 0 and int(nums[j]) <= int(nums[i - 1]):    j -= 1
-            swap(i - 1, j)
-
-        reverse(i)
-        for i in range(N):
-            nums[i] = int(nums[i])
-        return nums
+def swap(i, j):
+    arr[i] = arr[j] ^ arr[i]
+    arr[j] = arr[j] ^ arr[i]
+    arr[i] = arr[j] ^ arr[i]
 
 
-# {
-# Driver Code Starts
-# Initial Template for python3
+def reverse(i):
+    j = N - 1
+    while i < j:
+        swap(i, j)
+        j -= 1
+        i += 1
 
-if __name__ == '__main__':
-    t = int(input())
-    for _ in range(t):
-        N = int(input())
-        arr = input().split()
-        for i in range(N):
-            arr[i] = int(arr[i])
-        ob = Solution()
-        ans = ob.nextPermutation(N, arr)
-        for i in range(N):
-            print(ans[i], end=" ")
-        print()
+
+def nextPermutation(n, arr):
+    i = n - 1
+    j = n - 1
+    while i > 0 and arr[i - 1] >= arr[i]:
+        i -= 1
+    if i > 0:
+        while j > 0 and arr[i - 1] >= arr[j]:
+            j -= 1
+        swap(i - 1, j)
+    reverse(i)
+
+
+t = int(input())
+for _ in range(t):
+    N = int(input())
+    arr = input().split()
+    for i in range(N):
+        arr[i] = int(arr[i])
+
+    print('Before', arr)
+
+    nextPermutation(N, arr)
+    print(arr)
+    print()
 # } Driver Code End
