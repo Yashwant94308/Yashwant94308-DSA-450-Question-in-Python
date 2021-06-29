@@ -25,11 +25,11 @@ def solveWordWrap():
 
 # input = io.BytesIO(os.read(0, os.fstat(0).st_size)).readline
 # n = input().decode()
-
-start = time.perf_counter()
-# Output Integer
+#
+# start = time.perf_counter()
+# # Output Integer
 n = 5
-sys.stdout.write(str(n) + "\n")
+# sys.stdout.write(str(n) + "\n")
 
 # Output String
 s = "GeeksforGeeks\n"
@@ -37,14 +37,14 @@ sys.stdout.write(s)
 
 # Output Array
 arr = [1, 2, 3, 4]
-sys.stdout.write(
-    " ".join(map(str, arr)) + "\n"
-)
+# sys.stdout.write(
+#     " ".join(map(str, arr)) + "\n"
+# )
 
-# Stores the end time
-end = time.perf_counter()
-
-# Print the time taken
-print("\nTime taken in Fast Output:", end - start)
+# # Stores the end time
+# end = time.perf_counter()
+#
+# # Print the time taken
+# print("\nTime taken in Fast Output:", end - start)
 
 print(solveWordWrap())
