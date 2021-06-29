@@ -1,15 +1,16 @@
-coins = [2,3,4,5]
+coins = [2, 3, 4, 5]
 
 amount = 130050
 dp = [1e9] * (amount + 1)
 dp[0] = 0
 
+
 # dp
 def dpD():
     for i in range(amount + 1):
         for c in coins:
-            if i-c >= 0:
-                dp[i] = min(dp[i], 1+dp[i-c])
+            if i - c >= 0:
+                dp[i] = min(dp[i], 1 + dp[i - c])
 
 
 dpD()
