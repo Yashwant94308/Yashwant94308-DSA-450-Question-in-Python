@@ -1,40 +1,12 @@
-B = ['f', 'mes', 'ckjcaz', 'dr', 'dg', 'rqscczy']
-A = "mesckjcazdgfckjcazckjcazmesckjcaz"
+s = "applepenapple"
+wordDict = ["apple", "pen"]
 
-
-def wb():
-    n = len(B)
-    ans = 0
-    i = 0
-    j = 0
-    while i < len(A) and j < n:
-        if A[i] in B[j]:
-
-            o = i
-            k = 0
-            while k < len(B[j]):
-                if B[j][k] == A[o]:
-                    o += 1
-                    k += 1
-
-                    if o >= len(A):
-                        break
-                else:
-
-                    break
-
-            if k >= len(B[j]):
-                i = o
-                j = 0
-                ans = 1
-            else:
-                j += 1
-                ans = 0
-
-        else:
-            j += 1
-            ans = 0
-    return ans
-
-
-print(wb())
+dp = [False] * (len(s) + 1)
+dp[len(s)] = True
+for i in range(len(s) - 1, -1, -1):
+    for w in wordDict:
+        if (i + len(w)) <= len(s) and s[i:i + len(w)] == w:
+            dp[i] = dp[i + len(w)]
+        if dp[i]:
+            break
+print(dp[0])
