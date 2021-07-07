@@ -61,4 +61,4 @@ if __name__ == '__main__':
     ]
     # Graph(route)
     g = Graph(route)
-    print(g.SortestPath("Mumbai", "New York"))
+    print(g.AllPath("Mumbai", "Torento"))

@@ -62,5 +62,5 @@ class Solution:
 
 s = Solution()
 print(s.songPairs(90, [70, 10, 25, 35, 60]))
-# print(s.songPairs(90, [60,60,60]))
-# print(s.songPairs(50, [1,2, 3, 4, 5, 6, 7, 8]))
+print(s.songPairs(90, [60, 60, 60]))
+print(s.songPairs(50, [1, 2, 3, 4, 5, 6, 7, 8]))
