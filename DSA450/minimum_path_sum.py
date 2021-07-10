@@ -22,6 +22,7 @@ def dfs(paths, row, col):
         return 1e9
     # print(row, col)
     if dp[row][col] != 1e9:
+
         return dp[row][col]
 
     dp[row][col] = paths[row][col] + min(
