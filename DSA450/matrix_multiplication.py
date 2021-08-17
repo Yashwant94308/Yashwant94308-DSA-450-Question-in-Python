@@ -1,6 +1,6 @@
 import sys
 
-arr = [1,3,1,5,8,1]
+arr = [1, 3, 1, 5, 8, 1]
 n = len(arr)
 
 # using DP
@@ -12,9 +12,9 @@ def dfs(arr, i, j):
         return 0
     if dp[i][j] != -1:
         return dp[i][j]
-    # dp[i][j] = sys.maxsize
+    dp[i][j] = sys.maxsize
     for k in range(i, j):
-        dp[i][j] = max(dp[i][j], dfs(arr, i, k) + dfs(arr, k + 1, j) + (arr[i - 1] * arr[k] * arr[j]))
+        dp[i][j] = min(dp[i][j], dfs(arr, i, k) + dfs(arr, k + 1, j) + (arr[i - 1] * arr[k] * arr[j]))
     return dp[i][j]
 
 

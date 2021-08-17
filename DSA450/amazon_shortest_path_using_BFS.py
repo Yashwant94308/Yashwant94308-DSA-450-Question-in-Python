@@ -33,7 +33,7 @@ while len(q) > 0:
         q.append([points[0] - 1, points[1], points[2] + 1])
         vis[points[0] - 1][points[1]] = True
 
-    if points[0] + 1 < R and vis[points[0] + 1][points[1]] == False:
+    if points[0] + 1 < R and not vis[points[0] + 1][points[1]]:
         q.append([points[0] + 1, points[1], points[2] + 1])
         vis[points[0] + 1][points[1]] = True
 

@@ -6,12 +6,12 @@ words = ["cat", "map", "bat", "man", "pen"]
 queries = ["?at", "ma?", "?a?", "??n"]
 
 sets = defaultdict(set)
-print(sets)
+# print(sets)
 for word in words:
     for i, c in enumerate(word):
         sets[i, c].add(word)
 
-print(sets)
+# print(sets)
 all_words = set(words)
 
 for q in queries:
